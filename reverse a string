@@ -5,10 +5,8 @@ int main()
     char str[s];
     scanf("%s",str);
     if(s%2==0)
-        c=(s/2)-1;
-    else
-        c=s/2;
-    for(i=0;i<=c;i++)
+        c=(s/2);
+    for(i=0;i<c;i++)
        {temp=str[i];
     str[i]=str[(s-1)-i];
     str[(s-1)-i]=temp;
