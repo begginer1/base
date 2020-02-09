@@ -17,6 +17,8 @@ break;
 else
 i++;
 }
+if(h[j]=='\0')
+i--;
 if(flag==0)
 {
 c++;
