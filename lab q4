@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+int i,flag,j,c=0;
+char a[100];
+char h[50];
+gets(a);
+gets(h);
+for(i=0;a[i]!='\0';i++)
+{flag=0;
+for(j=0;h[j]!='\0';j++)
+{
+if(a[i]!=h[j]){
+flag=1;
+break;
+}
+else
+i++;
+}
+if(flag==0)
+{
+c++;
+}
+}
+printf("%d",c);
+return 0;}
