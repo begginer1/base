@@ -17,7 +17,7 @@ break;
 else
 i++;
 }
-if(h[j]=='\0')
+if(h[j]=='\0')  // for repeated worlds
 i--;
 if(flag==0)
 {
