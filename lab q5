@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+int i,j,flag;
+char a[100];
+char h[50];
+gets(a);
+gets(h);
+for(i=0;a[i]!='\0';i++)
+{ flag=0;
+for(j=0;h[j]!='\0';j++)
+{
+if(a[i]!=h[j])
+{flag=1;
+break;}
+else
+i++;
+}
+if(h[j]=='\0'&&h[j-1]!=a[i])         // condition when loop end due to null prob inp:-sachin sajwan/n sa out:-hin wan
+printf("%c",a[i]);
+else if(flag==1)
+printf("%c",a[i]);
+}
+return 0;}
