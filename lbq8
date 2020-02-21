@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+int rec(char *a,char *s,int i)
+{ int static c=0;
+if(i==-1)
+{
+return 0;
+}
+else 
+s[c]=a[i];
+c++;
+ rec(a,s,i-1);
+ s[c]='\0';
+ return s;
+ }
+int main()
+{
+char ch[100];int n;char s[100];
+gets(ch);
+n=strlen(ch);
+printf("%s",rec(ch,s,n-1));
+return 0;
+}
