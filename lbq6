@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<string.h>
+int rec(char *a,int i)
+{
+if(a[i]=='\0')
+return i;
+else 
+ return rec(a,i+1);
+ }
+int main()
+{
+char ch[100];int n=0;
+gets(ch);
+printf("%d",rec(ch,n));
+return 0;
+}
