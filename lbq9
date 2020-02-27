@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<string.h>
+int main()
+{
+char *a,*b,*c;
+int i,n1,n2;
+scanf("%d%d",&n1,&n2);
+a=(char*)malloc(sizeof(char)*n1);
+b=(char*)malloc(sizeof(char)*n2);
+getchar();
+for(i=0;i<n1;i++)
+scanf("%c",&a[i]);
+getchar();
+for(i=0;i<n2;i++)
+scanf("%c",&b[i]);
+c=(char*)realloc(a,n1+n2);
+int k=n1;
+for(i=0;i<n2;i++){
+c[k]=b[i];
+k++;
+}
+for(i=0;i<(n2+n1);i++)
+printf("%c",c[i]);
+return 0;
+}
