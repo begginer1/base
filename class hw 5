@@ -1,0 +1,21 @@
+#include<math.h>
+#include<stdio.h>
+int main()
+{
+int i,j,k,n,sum=0;
+scanf("%d",&n);
+int a[n];
+for(i=0;i<n;i++)
+scanf("%d",&a[i]);
+for(i=0;i<n-1;i++){
+for(k=i+1;k<n;k++)
+{printf("\n");
+sum=pow(10,n-k)*a[i];
+for(j=k;j<n;j++)
+sum+=pow(10,n-j-1)*a[j];
+printf("%d",sum);
+}
+
+printf("\n%d",a[n-1]);}
+    return 0;
+}
