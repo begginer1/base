@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+int no=0,c=0;
+int n,rem;
+scanf("%d",&n);
+while(n)
+{
+    rem=n%10;
+    no+=rem*pow(2,c);
+    n=n/10;
+    c++;
+}
+printf("%d",no);
+    return 0;
+}
