@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+int n,c,co=0;
+scanf("%d",&n);
+c=n;
+while(c)
+{
+   c=c/10;
+    co++;
+}
+int a[co];
+int l=co;
+l--;
+while(n>0)
+{
+ a[l]=n%16;
+    n=n/16;
+   if(n!=0)
+    l--;
+}for(;l<co;l++) 
+printf("%d ",a[l]);
+    return 0;
+}
