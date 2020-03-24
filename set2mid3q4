@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+int i,n;
+scanf("%d",&n);
+getchar();
+char *p=(char*)malloc(sizeof(char)*n+1);
+gets(p);
+for(i=0;p[i]!='\0';i++)
+{
+    if(*(p+i)<=78)
+    *(p+i)=*(p+i)+12;
+    else
+    *(p+i)=*(p+i)-14;
+    
+}
+printf("%s",p);
+return 0;
+}
