@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+int i,j=0,c=0,n,small=99999,s,e;
+scanf("%d",&n);
+getchar();
+char *p=(char*)malloc(sizeof(char)*n+1);
+gets(p);
+for(i=0;i<=n;i++)
+{
+if(p[i]==' '||p[i]=='\0')
+{
+    if(c<small){
+    s=i-c-1; // -1 for removing space
+    e=i;
+    small=c;
+               }
+c=-1;    // to find lenth
+}
+else
+c++;
+}
+for(;s<e;s++)
+printf("%c",p[s]);
+return 0;
+}
