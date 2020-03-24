@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+int i,j=0,c=0,n,k=0,flag=0,s=0,e=0,l=0;
+scanf("%d",&n);
+getchar();
+char *p=(char*)malloc(sizeof(char)*n+1);
+gets(p);
+for(i=0;i<=n;i++)
+{
+if(p[i]==' '||p[i]=='\0')
+{if(l<c){
+    l=c;
+    c=j+c/2,flag=0;
+for(;j<c;j++){
+if(p[j]!=p[i-1-k]){
+flag=1;
+l=0;
+break;}
+else
+k++;
+}
+if(flag==0){
+s=i-(l+1);    // removing poistion of space
+e=i;
+}
+else if(c==j){
+s=i-(l+1);
+e=i;
+}
+}
+j=i+1;
+c=0;
+k=0;
+flag=0;
+}
+else
+c++;  
+}
+if(s==e)
+printf("%d",s);
+else{
+for(;s<e;s++)
+printf("%c",p[s]);}
+return 0;
+}
