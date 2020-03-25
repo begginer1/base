@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+int i,j,c,r,k=0,flg=0;
+scanf("%d",&r);
+int *a=(int*)malloc(sizeof(int)*r);
+for(i=0;i<r;i++)
+scanf("%d",&a[i]);
+scanf("%d",&c);
+int *b=(int*)malloc(sizeof(int)*c);
+int *e=(int*)calloc(sizeof(int),(c+r));
+for(i=0;i<c;i++)
+scanf("%d",&b[i]);
+i=0;j=0;
+while(i<r)
+{ flg=0,j=0;
+    while(j<c){
+if(a[i]==b[j])
+{
+    e[k]=b[j];
+i++;
+j++;
+k++;
+flg=1;
+break;
+}
+j++;
+    }
+    if(flg==1)
+continue;
+else
+i++;
+}
+       for(i=0;i<k;i++)
+       printf("%d ",e[i]);
+    return 0;
+}
