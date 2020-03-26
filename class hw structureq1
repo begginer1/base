@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<malloc.h>
+struct student{
+    char* nm;
+    int ph;
+    int rollno;
+    float mrk[5];
+    float per;
+};
+struct doa
+{
+    int dd;
+    int mm;
+    int yy;
+};
+struct dob
+{
+    int dd;
+    int mm;
+    int yy;
+};
+void discal(struct student *p,struct doa *b,struct dob *e,int n){ int total,i,j;
+for(i=0;i<n;i++)
+{ total=0;
+for(j=0;j<5;j++)
+total+=p[i].mrk[j];
+p[i].per=total*0.2;
+if(p[i].per>=80){
+printf("%s\t",p[i].nm);
+printf("%d %d\t",p[i].ph,p[i].rollno);
+for(j=0;j<5;j++)
+   printf("%f ",p[i].mrk[j]);
+
+    printf("\t%d %d %d",b[i].dd,b[i].mm,b[i].yy);
+    printf("\t%d %d %d\n",e[i].dd,e[i].mm,e[i].yy);
+}
+}
+}
+int main()
+{ int n,s,i,j;
+printf("no of students detail you want to input");
+    scanf("%d",&n);
+    struct student *p=(struct student*)malloc(sizeof(struct student)*n);
+    struct doa *b=(struct doa*)malloc(sizeof(struct doa)*n);
+    struct dob *e=(struct dob*)malloc(sizeof(struct dob)*n);
+    for(i=0;i<n;i++){
+    printf("enter size of ur name");
+    scanf("%d",&s);
+    getchar();
+    p[i].nm=(char*)malloc(sizeof(char*)*s+1);
+    printf("enter ur name");
+    gets(p[i].nm);
+scanf("%d%d",&p[i].ph,&p[i].rollno);
+for(j=0;j<5;j++)
+{
+   scanf("%f",&p[i].mrk[j]);
+    }
+    printf("enter doa");
+    scanf("%d%d%d",&b[i].dd,&b[i].mm,&b[i].yy);
+    printf("enter dob");
+    scanf("%d%d%d",&e[i].dd,&e[i].mm,&e[i].yy);
+}
+discal(p,b,e,n);
+return 0;
+}
