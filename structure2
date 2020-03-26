@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+struct distance{
+float inch;
+float feet;
+}p[3];
+void add()
+{
+p[2].inch=p[0].inch+p[1].inch;
+if(p[2].inch>=12){
+p[2].feet+=p[2].inch/12;
+ p[2].inch= fmod(p[2].inch,12);
+}
+p[2].feet+=p[0].feet+p[1].feet;
+}
+int main()
+{
+  printf("enter distance in feet and inches"); 
+scanf("%f %f",&p[0].feet,&p[0].inch);
+scanf("%f %f",&p[1].feet,&p[1].inch);
+add();
+printf("%.2f %.2f",p[2].feet,p[2].inch);
+}
