@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{ int n,j,i;
+scanf("%d",&n);
+char a[n][20],temp[20];
+for(i=0;i<n;i++)
+{
+    scanf("%s",&a[i][20]);
+}
+for(i=0;i<n-1;i++){
+for(j=i+1;j<n;j++)
+{ 
+    if(strcmpi(&a[i][20],&a[j][20])>0)
+    {
+    strcpy(temp,&a[j][20]);
+    strcpy(&a[j][20],&a[i][20]);
+    strcpy(&a[i][20],temp);
+    }
+}
+}
+for(i=0;i<n;i++)
+{
+    printf("%s\n",&a[i][20]);
+}
+return 0;
+}
