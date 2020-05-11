@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{int n,m,i,j,k,large,small,c=0,no;
+    scanf("%d %d",&n,&m);
+    int a[n],b[m];
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<m;i++)
+    scanf("%d",&b[i]);
+    large=a[n-1];
+    small=b[0];
+    no=large;
+for(i=no;i<=small;i++)
+{
+for(j=0;j<m;j++)
+if(b[j]%i!=0)
+{
+break;
+}
+if(j==m){
+for(k=0;k<n;k++)
+if(i%a[k]!=0)
+break;
+if(k==n)
+c++;
+}
+}
+printf("%d",c);
+    return 0;
+}
