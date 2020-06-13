@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+int main()
+{char a[100];
+char c;
+    FILE *fp1,*fp2;
+    fp1=fopen("FILE1.txt","w");
+    if(fp1==NULL)
+    {
+        printf("file1 could not open");
+        exit(0);
+            }
+            else{
+            fgets(a,100,stdin);
+            fputs(a,fp1);
+            fclose(fp1);
+             fp1=fopen("FILE1.txt","r");
+            fp2=fopen("FILE2.txt","w");
+            while((c=fgetc(fp1))!=EOF)
+            {
+             if(isupper(c))
+             {
+                if(c=='Y')
+                c='A';
+                else if(c=='Z')
+                
+                c='B'; 
+                else
+                c=c+2;
+             }
+             else if(islower(c)){
+                if(c=='y')
+                c='a';
+                else if(c=='z')
+                c='b';
+                else
+                c=c+2;
+             }
+                
+             fputc(c,fp2);
+            }fclose(fp1);
+            fclose(fp2);
+            }
+
+    return 0;
+}
